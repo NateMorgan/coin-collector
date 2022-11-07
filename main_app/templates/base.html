@@ -8,7 +8,7 @@
   <link
     rel="shortcut icon"
     type="image/png"
-    href=""
+    href="{% static 'images/coin.png' %}"
   >
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   <title>Coin Collector</title>
@@ -20,13 +20,15 @@
     <div class="header-logo-container">
       <a href="/">
         <img 
-          src=""
+          src="{% static 'images/coin.png' %}"
           alt="The Coin Collector Logo"
+          width="100px"
         >
       </a>
     </div>
     <nav>
       <ul>
+        <li><a href="/collections">Collections</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
