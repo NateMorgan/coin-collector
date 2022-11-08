@@ -18,7 +18,7 @@
 <body>
   <header>
     <div class="header-logo-container">
-      <a href="/">
+      <a href="{% url 'home' %}">
         <img 
           src="{% static 'images/coin.png' %}"
           alt="The Coin Collector Logo"
@@ -28,8 +28,9 @@
     </div>
     <nav>
       <ul>
-        <li><a href="/collections">Collections</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="{% url 'collections_create' %}">Add a Collection</a></li>
+        <li><a href="{% url 'collections_index' %}">All Collections</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
       </ul>
     </nav>
   </header>

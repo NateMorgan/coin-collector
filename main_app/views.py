@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Collection
+from django.views.generic.edit import CreateView
+
 
 
 def home(request):
@@ -15,3 +17,8 @@ def collections_index(request):
 def collections_detail(request,collection_id):
   collection = Collection.objects.get(id=collection_id)
   return render(request, 'collections/detail.html', {'collection': collection})
+
+class CollectionCreate(CreateView):
+  model = Collection
+  fields = '__all__'
+  success_url = '/collections/'
