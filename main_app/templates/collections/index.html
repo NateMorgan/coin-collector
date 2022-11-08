@@ -18,19 +18,21 @@
 
 <section class="card-container">
   {% for collection in collections %}
-    <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/collection.webp' %}" 
-            alt="Collection of coins"
-            width="100px"
-          >
+    <a href="{% url 'collections_detail' collection.id %}}"
+      <div class="card">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="{% static 'images/collection.webp' %}" 
+              alt="Collection of coins"
+              width="100px"
+            >
+          </div>
+          <h2 class="card-title">{{ collection.name }}</h2>
+          <p><small>{{ collection.description }}</small></p>
         </div>
-        <h2 class="card-title">{{ collection.name }}</h2>
-        <p><small>{{ collection.description }}</small></p>
       </div>
-    </div>
+    </a>
   {% endfor %}
 </section>
 
