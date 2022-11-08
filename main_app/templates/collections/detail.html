@@ -19,9 +19,13 @@
       width="100px"
     >
   </div>
-  <div class="coin-details">
+  <div class="collection-details">
     <h1>{{ collection.name }}</h1>
     <p>{{ collection.description }}</p>
+  </div>
+  <div class="collection-actions">
+    <a href="{% url 'collections_update' collection.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'collections_delete' collection.id %}" class="btn danger">Delete</a>
   </div>
 </section>
 

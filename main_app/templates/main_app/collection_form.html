@@ -8,7 +8,11 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Add a Collection</h1>
+  {% if collection %}
+    <h1> Edit Collection</h1>
+  {% else %}
+    <h1>Add a Collection</h1>
+  {% endif%}
   <img 
     src="{% static 'images/collection.webp' %}" 
     alt="Collection of Coins"

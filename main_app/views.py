@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import Collection
-from django.views.generic.edit import CreateView
-
-
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 def home(request):
   return render(request, 'home.html')
@@ -21,4 +19,12 @@ def collections_detail(request,collection_id):
 class CollectionCreate(CreateView):
   model = Collection
   fields = '__all__'
+  success_url = '/collections/'
+
+class CollectionUpdate(UpdateView):
+  model = Collection
+  fields = ['name', 'description']
+
+class CollectionDelete(DeleteView):
+  model = Collection
   success_url = '/collections/'
