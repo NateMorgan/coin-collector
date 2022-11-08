@@ -30,6 +30,11 @@
           </div>
           <h2 class="card-title">{{ collection.name }}</h2>
           <p><small>{{ collection.description }}</small></p>
+          {% if collection.offers_current %}
+            <p> Offers are current </p>
+          {% else %}
+            <p> Offers might be outdated </p>
+          {% endif %}
         </div>
       </div>
     </a>

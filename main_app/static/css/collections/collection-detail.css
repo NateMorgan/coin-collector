@@ -1,4 +1,4 @@
-.coin-container {
+.collection-container {
   padding: 35px 30px;
   display: flex;
   flex-direction: column;
@@ -6,25 +6,24 @@
   justify-content: center;
 }
 
-.coin-img {
+.collection-img {
   width: 75%;
   max-width: 350px;
 }
 
 .usr-img {
   width: 100%;
-  border-radius: var(--card-border-radius);
 }
 
-.coin-details {
+.collection-details {
   width: 98%;
 }
 
-.coin-actions {
+.collection-actions {
   margin-top: 20px;
 }
 
-.feedings-toy-container {
+.offers-coin-container {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
@@ -41,7 +40,7 @@
   margin: 0 8px;
 }
 
-.toy-container {
+.coin-container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -54,20 +53,20 @@
   margin-right: 10px;
 }
 
-.unfed,
-.fed,
-.no-toys,
-.all-toys {
+.no-offer,
+.offer,
+.no-coins,
+.all-coins {
   margin: 0;
   font-weight: bold;
 }
 
-.unfed,
-.no-toys {
+.no-offer,
+.no-coins {
   color: var(--danger);
 }
 
-.fed,
+.offer,
 .all-toys {
   color: var(--submit);
 }
@@ -94,13 +93,10 @@
   margin: 5px 0;
 }
 
-.feedings-toy-container > section {
+.offers-coin-container > section {
   width: 80%;
   min-width: 360px;
-  border: var(--borders);
-  border-radius: var(--card-border-radius);
   padding: 10px;
-  box-shadow: var(--card-box-shadow);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,23 +112,17 @@
   margin-left: 16px;
 }
 
-.feedings h2,
-.toys h2 {
+.offers h2,
+.coins h2 {
   font-size: 3.2rem;
   margin: 0;
 }
 
-.feedings h3,
-.toys h3 {
-  font-size: var(--font-xl);
+.offers h3,
+.coins h3 {
   margin: 10px 0;
 }
 
-.subsection-content p,
-.subsection-content input,
-.subsection-content select {
-  font-size: var(--font-l);
-}
 
 .subsection-content input,
 .subsection-content select {
@@ -140,38 +130,36 @@
   padding: 3px;
 }
 
-.feedings table {
+.offers table {
   width: calc(100% - 16px);
   text-align: left;
   border-collapse: collapse;
   margin: 0 8px;
 }
 
-.feedings td {
+.offers td {
   padding: 8px 5px;
-  font-size: var(--font-reg);
 }
 
-.feedings th {
-  font-size: var(--font-l);
+.offers th {
   padding: 5px 5px 0;
   border-bottom: rgb(36, 116, 248) solid 2px;
 }
 
-.feedings tr:nth-child(even) {
+.offers tr:nth-child(even) {
   background-color: #f3f3fd;
 }
 
-.toy-container p {
+.coin-container p {
   margin: 12px 0;
 }
 
-.toy-container a {
+.coin-container a {
   text-decoration: none;
   color: #111;
 }
 
-.toy-container .btn {
+.coin-container .btn {
   padding: 3px 10px;
   margin-left: 10px;
 }
@@ -188,32 +176,32 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .coin-container {
+  .collection-container {
     padding: 35px 30px;
     flex-direction: row;
     align-items: center;
     justify-content: start;
   }
 
-  .coin-img {
+  .collection-img {
     width: 25%;
     max-width: 250px;
     margin-right: 25px;
   }
 
-  .feedings-toy-container {
+  .offers-coin-container {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
   }
 
-  .feedings-toy-container > section {
+  .offers-coin-container > section {
     width: 45%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .feedings-toy-container {
+  .offers-coin-container {
     padding: 0 40px;
   }
 }

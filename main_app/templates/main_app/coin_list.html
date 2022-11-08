@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/coins/coin-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>All Coins</h1>
+</section>
+
+<section class="card-container">
+  {% for coin in coin_list %}
+  <div class="card">
+    <div class="card-bg">
+      <img src="{{coin.image}}" alt="{{ coin.name }}"/>
+    </div>
+    <a href="{% url 'coins_detail' coin.id %}">
+      <div class="card-content">
+        <h2>{{ coin.name }}</h2>
+        <p>Minted: {{ coin.mintage }} </p>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

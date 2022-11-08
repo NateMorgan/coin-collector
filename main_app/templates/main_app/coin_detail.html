@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/toys/coin-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+  
+<div class="card">
+  <div class="card-bg"></div>
+  <div class="card-content">
+    <h2>{{ coin.name }}</h2>
+    <p>Minted: {{ coin.mintage }}</p>
+  </div>
+</div>
+<a href="{% url 'coins_update' coin.id %}" class="btn warn">Edit</a>
+<a href="{% url 'coins_delete' coin.id %}" class="btn danger">Delete</a>
+
+{% endblock %}

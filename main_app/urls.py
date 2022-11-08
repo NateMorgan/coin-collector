@@ -9,4 +9,10 @@ urlpatterns = [
   path('collections/create/', views.CollectionCreate.as_view(), name='collections_create'),
   path('collections/<int:pk>/update/', views.CollectionUpdate.as_view(), name='collections_update'),
   path('collections/<int:pk>/delete/', views.CollectionDelete.as_view(), name='collections_delete'),
+  path('collections/<int:collection_id>/add_offer/', views.add_offer, name='add_offer'),
+  path('coins/create/', views.CoinCreate.as_view(), name='coins_create'),
+  path('coins/', views.CoinList.as_view(), name='coins_index'),
+  path('coins/<int:pk>/', views.CoinDetail.as_view(), name='coins_detail'),
+  path('coins/<int:pk>/update/', views.CoinUpdate.as_view(), name='coins_update'),
+  path('coins/<int:pk>/delete', views.CoinDelete.as_view(), name='coins_delete'),
 ]
