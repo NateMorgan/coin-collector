@@ -28,11 +28,18 @@
     </div>
     <nav>
       <ul>
-        <li><a href="{% url 'coins_create' %}">Add a Coin</a></li>
-        <li><a href="{% url 'coins_index' %}">All Coins</a></li>
-        <li><a href="{% url 'collections_create' %}">Add a Collection</a></li>
-        <li><a href="{% url 'collections_index' %}">All Collections</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'coins_create' %}">Add a Coin</a></li>
+          <li><a href="{% url 'coins_index' %}">All Coins</a></li>
+          <li><a href="{% url 'collections_create' %}">Add a Collection</a></li>
+          <li><a href="{% url 'collections_index' %}">All Collections</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'home' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </nav>
   </header>

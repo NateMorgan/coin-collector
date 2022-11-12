@@ -78,6 +78,49 @@
       <p> No offers have been made on {{collection.name}} collection</p>
     {% endif %}
   </section>
+  <section class="coins">
+    <div class="subsection-title">
+      <h2>Coins</h2>
+    </div>
+    <h3>Coins in {{ collection.name }}</h3>
+    <div class="subsection-content">
+      {% if collection.coins.count %}
+        {% for coin in collection.coins.all %}
+          <div class="coin-container">
+            <div class="color-block">
+            </div>
+            <a href="{% url 'coins_detail' coin.id %}">
+              <p>A {{ coin.name }} from {{ coin.mintage }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-coins">{{collection.name}} doesn't have any coins </p>
+      {% endif %}
+    </div>
+    <h3>Available Coins</h3>
+    <div class="subsection-content">
+      {% if coins.count %}
+        {% for coin in coins.all %}
+          <div class="coin-container">
+            <div class="color-block">
+            </div>
+            <a href="{% url 'coins_detail' coin.id %}">
+              <p>A {{ coin.name }} from {{coin.mintage}}</p>
+            </a>
+            <form action="{% url 'assoc_coin' collection.id coin.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Add Coin to Collection</button>
+            </form>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="all-coins">
+          {{collection.name}} already has all the available coins
+        </p>
+      {% endif %}
+    </div>
+  </section>
 </div>
 
 

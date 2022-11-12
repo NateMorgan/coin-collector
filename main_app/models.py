@@ -1,14 +1,31 @@
 from django.db import models
 from django.urls import reverse
 from datetime import date
+from django.contrib.auth.models import User
+
+class Coin(models.Model):
+  name = models.CharField(max_length=100)
+  mintage = models.IntegerField()
+  image = models.CharField(max_length = 200)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('coins_detail', kwargs={'pk': self.id})
 
 # Create your models here.
 class Collection(models.Model):
   name = models.CharField(max_length=30)
   description = models.TextField(max_length=100)
-
+  coins = models.ManyToManyField(Coin)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
   def __str__(self):
     return self.name
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
   def get_absolute_url(self):
     return reverse('collections_detail', kwargs={'collection_id': self.id})
@@ -33,14 +50,3 @@ class Offer(models.Model):
 
   class Meta:
     ordering = ['-date']
-
-class Coin(models.Model):
-  name = models.CharField(max_length=50)
-  mintage = models.IntegerField()
-  image = models.CharField(max_length = 200)
-
-  def __str__(self):
-    return self.name
-
-  def get_absolute_url(self):
-    return reverse('coins_detail', kwargs={'pk': self.id})
