@@ -59,6 +59,9 @@ class CollectionCreate(LoginRequiredMixin, CreateView):
   model = Collection
   fields = ['name', 'description']
   success_url = '/collections/'
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class CollectionUpdate(LoginRequiredMixin, UpdateView):
   model = Collection

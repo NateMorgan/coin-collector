@@ -6,22 +6,24 @@
 {% endblock %}
 
 {% block content %}
-
-<section class="logo-container">
-  <div class="coin-container">
-    <img src="{% static 'images/coin.png' %}" alt="Coin Collector Logo" width="400px"/>
-  </div>
-</section>
-{% if not user.is_authenticated %}
-  <section>
-    <form action="{% url 'home' %}" method="post" class="login">
-      <h1>Login</h1>
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="hidden" name="next" value="{{ next }}">
-      <button type="submit" class="btn submit">Login</button>
-    </form>
+<h1> Welcome to Collect Coins!</h1>
+<div id="home-container">
+  <section class="logo-container">
+    <div class="coin-container">
+      <img src="{% static 'images/coin.png' %}" alt="Coin Collector Logo" width="400px"/>
+    </div>
   </section>
-{% endif %}
+  {% if not user.is_authenticated %}
+    <section>
+      <form action="{% url 'home' %}" method="post" class="login">
+        <h1>Login</h1>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit" class="btn submit">Login</button>
+      </form>
+    </section>
+  {% endif %}
+</div>
 
 {% endblock %}

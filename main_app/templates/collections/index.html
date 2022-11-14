@@ -12,10 +12,15 @@
 
 {% block content %}
 
+<br>
+<br>
+<br>
+<br>
+<br>
 <section class="page-header">
   <h1>List of Collections</h1>
 </section>
-
+<hr/>
 <section class="card-container">
   {% for collection in collections %}
     <a href="{% url 'collections_detail' collection.id %}"

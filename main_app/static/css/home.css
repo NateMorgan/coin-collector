@@ -1,18 +1,14 @@
 main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   height: 100%;
+  width: 100%;
 }
 
-main > section {
-  width: 100%;
-  padding: 10px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+h1{
+  font-size: 60px;
 }
 
 .header-logo-container {
@@ -32,12 +28,17 @@ main > section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 1000px;
+  border: 2px solid black;
+  outline: 2px solid yellow;
+  margin: 0 10px;
+  border-radius: 10%;
 }
 
 .login h1 {
   font-size: clamp(3.2rem, 3vw, 4.8rem);
   margin: 10px 0;
+  width:300px;
 }
 
 .login > p {
@@ -45,14 +46,17 @@ main > section {
   flex-direction: column;
   width: 100%;
   margin: 14px 0 0px;
+  width:300px;
 }
 
 .login label {
   margin-bottom: 6px;
+  width:300px;
 }
 
 .login input {
   padding: 2px 4px;
+  width:300px;
 }
 
 .login .btn {
@@ -61,13 +65,18 @@ main > section {
   margin-top: 16px;
 }
 
+#home-container{
+  width: 100%;
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
 @media only screen and (min-width: 768px) {
   main {
     justify-content: space-around;
-  }
-
-  main > section {
-    width: 40%;
   }
 
   .login {

@@ -6,14 +6,20 @@
 {% endblock %}
 
 {% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="page-header">
   {% if object %}
     <h1>Edit {{object.name}}</h1>
   {% else %}
     <h1>Add a Coin</h1>
   {% endif %}
-  <img src="{% static 'images/coin.png' %}" alt="A coin"/>
 </div>
+<hr/>
 <form action="" method="post" class="form-container" autocomplete="off">
   {% csrf_token %}
   <table>
